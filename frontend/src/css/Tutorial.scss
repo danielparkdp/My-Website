@@ -35,8 +35,6 @@
 }
 
 #tut-rocket-img {
-    width: 70px;
-    transform: rotate(40deg);
 }
 
 .tut-text {
@@ -107,11 +105,14 @@
 
 #tut-arena-img {
     width: 120px;
-    transform: rotate(-10deg);
+    transform: rotate(40deg);
     margin-left: 25px;
 }
 
 #tut-planet-img {
+    width: 110px;
+}
+#tut-WASD-img {
     width: 110px;
 }
 
