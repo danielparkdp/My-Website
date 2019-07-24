@@ -8,7 +8,7 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom right, $main-bg-color 10%, $darker-space-color 60%);
-    color: white;
+    color: #001147;
     z-index: 135;
     margin: 0;
     display: flex;
@@ -30,7 +30,7 @@ button {
     text-align: center;
 }
 .subtitle  {
-    color: white;
+    color: #001147;
 }
 
 .error {
@@ -65,7 +65,7 @@ button {
 .large-button  {
     margin: 10px auto;
     background-color: $accent;
-    color: white;
+    color: #001147;
     width: 140px;
     height: 40px;
     font-size: 15px;
@@ -117,10 +117,10 @@ input[type="submit"] {
     outline: none;
     width: 100px;
     height: 30px;
-    color: white;
+    color: #001147;
     margin-top: 20px;
     margin-bottom: 20px;
-    border: solid white 1px;
+    border: solid #001147 1px;
     background: transparent;
 }
 
@@ -136,7 +136,7 @@ input[type="submit"]:hover {
     outline: none;
     border: none;
     background: none;
-    color: white;
+    color: #001147;
     position: absolute;
     top: 40px;
     left: 0;
@@ -164,7 +164,7 @@ input[type="submit"]:hover {
 .intro-page-btn {
     margin-top: 20px;
     margin-bottom: 20px;
-    border: solid white 1px;
+    border: solid #001147 1px;
     background: transparent;
 }
 

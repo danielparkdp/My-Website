@@ -23,7 +23,7 @@
 }
 
 .hover {
-  color: white;
+  color: #001147;
   font-weight: bold;
   font-family: Nunito;
   position: absolute;
@@ -34,7 +34,7 @@
 }
 
 .canEnterPlanet {
-  color: white;
+  color: #001147;
   font-weight: bold;
   font-family: Nunito;
   position: absolute;
@@ -54,7 +54,7 @@
 
 .bg {
     //background: $space-color;
-   
+
     overflow:hidden;
     width: 100vw;
     height: 100vh;
@@ -88,7 +88,7 @@
     //background-image: linear-gradient(to bottom right,#17212d,  $darker-space-color);
     //background-image: linear-gradient(to bottom right #423e6d,  rgb(21, 7, 39));
    // background-image: linear-gradient(to bottom right red,  black);
-   
+
    // background-image: linear-gradient(120deg, #25273d, $space-color);
 }
 
@@ -96,7 +96,7 @@
     height: 100vh;
     width: 100vw;
     overflow: scroll;
-    background-image: linear-gradient(to bottom right, #23253d 0%, $darker-space-color 60%);
+    background-image: linear-gradient(to bottom right, #F6FFFF 0%, $darker-space-color 60%);
 }
 
 .stars-front {
@@ -127,4 +127,3 @@
   background-repeat: repeat;
   overflow:hidden;
 }
-

@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 import World from "./World";
 import money from "./misc/cash.mp3";
 import { instanceOf } from 'prop-types';
-import background from "./misc/Urban-Jungle-2061_Looping.mp3"
+import background from "./misc/elevatorRide.mp3"
 import {CookiesProvider, withCookies, Cookies} from "react-cookie";
 import CryptoJs from "crypto-js";
 

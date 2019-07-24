@@ -7,12 +7,12 @@ import {isChrome, isFirefox, isMobile} from "react-device-detect";
 
  if(isMobile) {
      ReactDOM.render( <div className={"mobile-error"}>
-             Sorry, you can't play Dataverse on mobile.
+             Visit danielpark.info on your computer! You'll see why :)
          </div>, document.getElementById('root'));
 } else if (!isFirefox && !isChrome) {
          ReactDOM.render( <div className={"browser-unsupported-error"}>
-             Sorry, this browser is not supported. Try Firefox
-             or Chrome.
+             Please check out my site on Firefox
+             or Chrome! React acts up in Safari...
          </div>, document.getElementById('root'));
 
  } else {
