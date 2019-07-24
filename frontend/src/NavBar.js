@@ -138,11 +138,6 @@ class NavBar extends Component {
             <div className="NavBar" onClick={this.onClick}>
                 <ul className={"nav-list"}>
                     <li className={"name-li"}>{this.props.username}</li>
-                    <li className={"money-li clickable"} onClick={this.toggleShop} ><i className="fas fa-coins"></i> {this.props.coins}</li>
-                    <li className={"map-li clickable"} onClick={this.toggleMap}><i className="far fa-compass"></i></li>
-                    <li className={"customize-li clickable"} onClick={this.toggleCustomize}><i className="fas fa-palette"></i> </li>
-                    <li id={"settings-li"} className={"clickable"} onClick={this.toggleSettings}><i className="fas fa-cog"></i>
-                    </li>
                     <li className={"tutorial-li clickable"} onClick={this.toggleTutorial}>?</li>
 
                 </ul>
@@ -156,13 +151,6 @@ class NavBar extends Component {
                     </div>
                     <h2>Welcome to the Dataverse</h2>
                 </div>: null}
-                {this.state.settings ?
-                    <Menu name={this.props.username} bgVol={Math.floor(this.state.bgVolume * 100)} soundVol={Math.floor(this.state.soundVolume * 100)}
-                          backgroundVolume={this.changeBackgroundVolume} soundVolume={this.changeSoundVolume} close={this.toggleSettings}/>: null}
-                {this.state.customize ?
-                    <Customize options={this.props.rocket_options} close={this.rocketSubmit}/>: null}
-                {this.state.shop ?
-                    <Shop moneyAmount = {this.props.coins} close={this.toggleShop}/>: null}
                 {this.state.tutorial?
                 <Tutorial onClose={this.toggleTutorial} />: null }
 

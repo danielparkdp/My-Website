@@ -134,14 +134,11 @@ class IntroScreen extends Component {
         return (
             <div className="scrollable-wrapper">
                 <div className="IntroScreen">
-                    <div className={"title"}> <div className="dv-logo"/>  <h1>dataverse</h1> </div>
+                    <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
                     {!(this.state.login || this.state.signup) ?
                         <div className={"wrapper"}>
-                        <button className={"large-button intro-page-btn"} id={"login"} onClick ={this.toggleLogin}>
-                        Login </button>
-                        <button className={"large-button intro-page-btn"} id={"signup"} onClick={this.toggleSignup}>
-                        Signup </button>
-                            <div className={"guest"} onClick={this.continueAsGuest}>Continue as guest</div>
+                        <button className={"large-button intro-page-btn"} id={"guest"} onClick ={this.continueAsGuest}>
+                        Learn More! </button>
 
                         </div>: null
                     }
