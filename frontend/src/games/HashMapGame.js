@@ -33,13 +33,13 @@ class HashMapGame extends Component {
     PLANET_OFFSET_TOP = -35;
     PLANET_OFFSET_LEFT = -55;
     PLANET_WIDTH = 260;
-    DATA_STRUCTURE_NAME = "HashMap";
+    DATA_STRUCTURE_NAME = "Daniel Park";
 
     constructor(props) {
         super(props);
         //state
         this.state = {
-            name: "Candy Hash Saga",
+            name: "About me",
             targetVal: 14,
             modVal: 5,
             score: 0,

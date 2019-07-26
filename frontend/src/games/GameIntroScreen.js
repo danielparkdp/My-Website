@@ -51,7 +51,7 @@ toggleInfo=()=>{
       <div className="intro-screen"  onKeyDown={this.onKeyDown}>
 
         <h1 className="game-title" >{this.props.title} </h1>
-        <h2 className="data-struct" onClick={this.toggleInfo}> Data Structure: {this.props.dataStructure}</h2>
+        <h2 className="data-struct" onClick={this.toggleInfo}> {this.props.dataStructure}</h2>
         <Planet top={30 + this.props.topOffset} left={-70 + this.props.leftOffset} width={this.props.width} imgUrl={this.props.planetUrl} name={""}/>
         <h3 className="instructions">{this.props.instructions} </h3>
 
@@ -61,10 +61,10 @@ toggleInfo=()=>{
          {/* SHOW BUTTONS IF PROPS SAYS TO */}
          {this.props.showButtons === undefined || this.props.showButtons ?
               <div>
-                <button className={"large-button"} id="play-btn" onClick={this.props.submit}> Play Game </button>
-                <button className={"large-button"} id="return-btn-intro" onClick={this.props.back}> Back to Space </button>
+                <button className={"large-button"} id="play-btn" onClick={this.props.submit}> Next </button>
+                <button className={"large-button"} id="return-btn-intro" onClick={this.props.back}> Back to flying </button>
               </div>
-                    : <div className={"intro-screen-msg"}> The game will start shortly. </div>}
+                    : <div className={"intro-screen-msg"}> Loading... </div>}
             </div>
     );
          }

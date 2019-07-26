@@ -25,11 +25,10 @@ export function startBackEnd(gameName, userName){
 
 //STARTS THE GAME
 export function enterGame(game){
-    startBackEnd(game.state.name, game.props.username);
 
     game.setState({
       entered: true,
-      gameOver: false,
+      gameOver: true,
       score: 0
     });
 }

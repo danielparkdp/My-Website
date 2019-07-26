@@ -88,10 +88,10 @@ class World extends Component {
 
     DEGREE_FACTOR = 2;
     ROCKET_ACCELERATION = .1;
-    LEFT_BOUND = -1200;
-    RIGHT_BOUND = 2000;
-    TOP_BOUND = -1000;
-    BOTTOM_BOUND = 1200;
+    LEFT_BOUND = -1100;
+    RIGHT_BOUND = 1320;
+    TOP_BOUND = -500;
+    BOTTOM_BOUND = 1100;
 
     constructor(props) {
         super(props);
@@ -531,7 +531,7 @@ class World extends Component {
                 <div>
                     <div id="world"  className="world" onKeyDown={this.onKeyDown}>
                         <Rocket x={this.state.rocketLeft} y={this.state.rocketTop} degree={this.state.rocketDeg} img={this.rocketToFile(this.props.rocket)}/>
-                        {this.state.intersectingPlanet? <div className={"canEnterPlanet"}>Press Spacebar to Enter Planet!</div> : null}
+                        {this.state.intersectingPlanet? <div className={"canEnterPlanet"}>Press Spacebar to Learn More!</div> : null}
                         <div className="planet-div" style={planetsStyle}>
                             {this.state.planets} </div>
                     </div>
