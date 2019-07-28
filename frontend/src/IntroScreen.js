@@ -17,7 +17,7 @@ class IntroScreen extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {login: false, signup: false, loginError: "", signupError: ""};
+        this.state = {login: false, signup: false, loginError: "", signupError: "", changed: false};
     }
 
     login = (event) => {
@@ -73,6 +73,10 @@ class IntroScreen extends Component {
 
     };
 
+    changeBackgroundVolume = (vol) => {
+        this.props.backgroundVolume(vol);
+
+    };
 
     continueAsGuest = () => {
 
@@ -93,6 +97,13 @@ class IntroScreen extends Component {
     toggleLogin = () => {
         this.setState({login: !this.state.login});
 
+    };
+
+    changeBackgroundVolume = () => {
+      if (this.state.changed == false){
+        this.props.backgroundVolume(0.5);
+        this.state.changed = true;
+      }
     };
 
 
@@ -133,7 +144,7 @@ class IntroScreen extends Component {
 
         return (
             <div className="scrollable-wrapper">
-                <div className="IntroScreen">
+                <div className="IntroScreen" onMouseOver = {this.changeBackgroundVolume}>
                     <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
                     {!(this.state.login || this.state.signup) ?
                         <div className={"wrapper"}>
