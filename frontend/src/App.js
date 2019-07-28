@@ -72,6 +72,7 @@ class App extends Component {
 
         this.world_ref = React.createRef();
         this.background = new Audio(background);
+        this.background.volume = 0;
         this.background.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
@@ -284,6 +285,7 @@ class App extends Component {
     };
 
     render() {
+      this.background.volume = 1;
 
 
         return (
