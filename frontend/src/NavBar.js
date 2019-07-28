@@ -149,7 +149,7 @@ class NavBar extends Component {
                         <div className={"dot"}></div>
                         <div className={"dot-label"}>You are here</div>
                     </div>
-                    <h2>Welcome to the Dataverse</h2>
+                    <h2>Welcome to my Website!</h2>
                 </div>: null}
                 {this.state.tutorial?
                 <Tutorial onClose={this.toggleTutorial} />: null }

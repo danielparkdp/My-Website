@@ -47,18 +47,18 @@ class GameOverScreen extends Component {
 getScoreDisplay(sortedPlayers){
     //add scores to flex box if multiplayer
     if(this.props.multiplayer && this.props.players){
-      //find ranks of the players   
+      //find ranks of the players
        return <div className="score-wrapper"> <div className="multiplayer-score-div">
-        { sortedPlayers.map((username) => 
-                <div key={username+"score-go"} className="multiplayer-score-box"> 
-                    <div className="mult-rank"> #{this.playerRankMap[username]} </div> 
-                    <div className="mult-username"> {username} </div> 
+        { sortedPlayers.map((username) =>
+                <div key={username+"score-go"} className="multiplayer-score-box">
+                    <div className="mult-rank"> #{this.playerRankMap[username]} </div>
+                    <div className="mult-username"> {username} </div>
                     <div className="mult-score">{this.props.players[username]["score"]} pts</div>
                </div>) }
        </div> </div>
     } else {
       //single player display
-        return <div> 
+        return <div>
           <div id="curr-score-display">
         <h3 className="game-over-score"> SCORE: </h3>
         <h3 className="game-over-num"> {this.props.score} </h3>
@@ -113,11 +113,11 @@ getScoreDisplay(sortedPlayers){
   }
 
   render() {
-     
+
     //sort all the given players if multiplayer
-    let sortedPlayers = this.props.multiplayer ? 
-             Object.keys(this.props.players).sort((user, user2) => 
-                  (this.props.players[user]["score"] > this.props.players[user2]["score"]) ? -1 : 1) 
+    let sortedPlayers = this.props.multiplayer ?
+             Object.keys(this.props.players).sort((user, user2) =>
+                  (this.props.players[user]["score"] > this.props.players[user2]["score"]) ? -1 : 1)
                    : undefined;
 
     return (
@@ -132,11 +132,7 @@ getScoreDisplay(sortedPlayers){
           {/* SCORE */}
          {this.getScoreDisplay(sortedPlayers)}
 
-         {/* IF MULTIPLAYER, REPLAY BUTTON SHOULD BE RETURN TO ARENA */}
-         {this.props.multiplayer == false ? 
-           <button className={"large-button"} id="replay-btn" onClick={this.props.replay}> Replay </button> 
-           :  <button className={"large-button"} id="replay-btn" onClick={this.props.backToArena}> Back to Arena </button> }
-        
+
          <button className={"large-button"} id="return-btn" onClick={this.props.back}> Back to Space </button>
       </div>
     );

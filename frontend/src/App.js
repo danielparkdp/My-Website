@@ -94,9 +94,9 @@ class App extends Component {
     };
 
     setupWebSocket = () => {
-        socket = new WebSocket("ws://localhost:4567/socket"); //local
-        // let host = window.location.href.replace(/^http/, 'ws') + "socket"; //deployed
-        // socket = new WebSocket(host);
+        //socket = new WebSocket("ws://localhost:4567/socket"); //local
+        let host = window.location.href.replace(/^http/, 'ws') + "socket"; //deployed
+        socket = new WebSocket(host);
 
         socket.onmessage = (message) => {
             const response = JSON.parse(message.data);
