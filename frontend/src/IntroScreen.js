@@ -79,11 +79,10 @@ class IntroScreen extends Component {
     };
 
     continueAsGuest = () => {
-
-        if (this.state.changed == false){
-          this.props.backgroundVolume(0.5);
-          this.state.changed = true;
-        }
+      if (this.state.changed == false){
+        this.props.backgroundVolume(0.5);
+        this.state.changed = true;
+      }
 
         const toSend = {
             type: MESSAGE_TYPE.GUEST
@@ -149,7 +148,7 @@ class IntroScreen extends Component {
 
         return (
             <div className="scrollable-wrapper">
-                <div className="IntroScreen" onClick = {this.changeBackgroundVolume}>
+                <div className="IntroScreen" onMouseOver = {this.changeBackgroundVolume}>
                     <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
                     {!(this.state.login || this.state.signup) ?
                         <div className={"wrapper"}>
