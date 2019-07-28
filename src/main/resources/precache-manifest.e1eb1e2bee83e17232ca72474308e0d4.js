@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f9bbb79b8a2eab1e2657b7fd5e7f319",
+    "revision": "f88fe7815408133e722726c1a66fba4b",
     "url": "/index.html"
   },
   {
-    "revision": "114325a4f59e5527d0f5",
-    "url": "/static/css/main.ca1f54d3.chunk.css"
+    "revision": "f6c37a55faaace66f8a7",
+    "url": "/static/css/main.eba109d6.chunk.css"
   },
   {
-    "revision": "4195df24f2e5f9e8c9ba",
-    "url": "/static/js/2.8af08adf.chunk.js"
+    "revision": "0381a3869090d88751d1",
+    "url": "/static/js/2.96ca2db8.chunk.js"
   },
   {
-    "revision": "114325a4f59e5527d0f5",
-    "url": "/static/js/main.d5a04e5e.chunk.js"
+    "revision": "f6c37a55faaace66f8a7",
+    "url": "/static/js/main.be14703a.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -90,10 +90,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3d5f478399158a048e9ae34ffcf2fd2d",
     "url": "/static/media/candy_planet.3d5f4783.png"
-  },
-  {
-    "revision": "af0f389e5bf7e2f70ef7a5f673f56b19",
-    "url": "/static/media/cash.af0f389e.mp3"
   },
   {
     "revision": "c2f2a6686086aa5fa920d9346e7b4e5c",

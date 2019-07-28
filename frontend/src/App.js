@@ -3,9 +3,8 @@ import './css/App.scss';
 import IntroScreen from "./IntroScreen";
 import NavBar from "./NavBar";
 import World from "./World";
-import money from "./misc/cash.mp3";
 import { instanceOf } from 'prop-types';
-import background from "./misc/elevatorRide.mp3"
+import background from "./misc/elevatorRide.mp3";
 import {CookiesProvider, withCookies, Cookies} from "react-cookie";
 import CryptoJs from "crypto-js";
 
@@ -71,12 +70,8 @@ class App extends Component {
         };
 
         this.world_ref = React.createRef();
-        this.background = new Audio(background);
-        this.background.addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        }, false);
-        this.cashSound = new Audio(money);
+
+
     }
 
     hideIntro = () => {
@@ -156,9 +151,6 @@ class App extends Component {
                     const rocks = JSON.parse(pay["rockets"]);
                     this.setState({options: rocks, rocket: this.parseRockets(rocks), username: pay["username"], coins: parseInt(pay["coins"]), speed: pay["speed"]});
 
-                    if (this.state.coins !== before && (this.state.username === beforeUser)) {
-                      this.cashSound.play();
-                    }
 
                     break;
                 case MESSAGE_TYPE.LOGOUT:
@@ -236,17 +228,7 @@ class App extends Component {
 
     componentDidMount() {
         const { cookies } = this.props;
-
-        this.background.play()
-            .catch(error => {
-                this.background.play()
-
-            });
         this.setupWebSocket();
-        this.changeBackgroundVolume(0.5); //default
-
-
-
 
     }
 
@@ -259,13 +241,9 @@ class App extends Component {
     };
 
     changeBackgroundVolume = (volume) => {
-        this.background.pause();
-        this.background.volume = volume;
-        this.background.play();
     };
 
     changeSoundsVolume = (volume) => {
-        this.cashSound.volume = volume;
         if(this.world_ref.current){
             this.world_ref.current.setVolume(volume);
         }

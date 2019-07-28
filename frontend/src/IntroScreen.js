@@ -4,6 +4,7 @@ import './css/App.scss';
 import './css/IntroScreen.scss';
 import {socket, MESSAGE_TYPE} from "./App";
 import CryptoJs from 'crypto-js';
+import background from "./misc/elevatorRide.mp3";
 
 /**
  * Models the introduction screen for the game. Includes login and sign up buttons.
@@ -18,6 +19,7 @@ class IntroScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {login: false, signup: false, loginError: "", signupError: "", show: false};
+
     }
 
     login = (event) => {
@@ -83,10 +85,17 @@ class IntroScreen extends Component {
     };
 
     changeState = () => {
+
+              this.background = new Audio(background);
+              this.background.addEventListener('ended', function() {
+                  this.currentTime = 0;
+                  this.play();
+              }, false);
+              this.background.play();
       this.state.show = true;
       this.setState(this.state);
 
-      this.props.backgroundVolume(0.6);
+
     }
 
     toggleSignup = () => {
