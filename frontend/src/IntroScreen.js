@@ -80,6 +80,11 @@ class IntroScreen extends Component {
 
     continueAsGuest = () => {
 
+        if (this.state.changed == false){
+          this.props.backgroundVolume(0.5);
+          this.state.changed = true;
+        }
+
         const toSend = {
             type: MESSAGE_TYPE.GUEST
         };
