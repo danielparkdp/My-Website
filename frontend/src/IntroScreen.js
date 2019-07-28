@@ -141,7 +141,7 @@ class IntroScreen extends Component {
                         <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
                         {!(this.state.login || this.state.signup) ?
                             <div className={"wrapper"}>
-                            <button className={"large-button intro-page-btn"} id={"guest"} onClick ={this.continueAsGuest}>
+                            <button className={"large-start-button intro-page-btn"} id={"guest"} onClick ={this.continueAsGuest}>
                             Learn More! </button>
 
                             </div>: null

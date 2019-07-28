@@ -72,10 +72,27 @@ button {
     font-weight: bold;
     border-radius: 20px;
     padding: 5px;
-    animation: appear 3.8s;
 }
 
 .large-button:hover {
+    cursor: pointer;
+    background-color: $accent-hover;
+}
+
+.large-start-button  {
+    margin: 10px auto;
+    background-color: $accent;
+    color: #001147;
+    width: 140px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px;
+    animation: appear 3.8s;
+}
+
+.large-start-button:hover {
     cursor: pointer;
     background-color: $accent-hover;
 }
