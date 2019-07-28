@@ -17,7 +17,7 @@ class IntroScreen extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {login: false, signup: false, loginError: "", signupError: "", changed: false};
+        this.state = {login: false, signup: false, loginError: "", signupError: "", show: false};
     }
 
     login = (event) => {
@@ -73,25 +73,21 @@ class IntroScreen extends Component {
 
     };
 
-    changeBackgroundVolume = (vol) => {
-        this.props.backgroundVolume(vol);
-
-    };
 
     continueAsGuest = () => {
-      if (this.state.changed == false){
-        this.props.backgroundVolume(0.5);
-        this.state.changed = true;
-      }
 
         const toSend = {
             type: MESSAGE_TYPE.GUEST
         };
         socket.send(JSON.stringify(toSend));
-
-
-
     };
+
+    changeState = () => {
+      this.state.show = true;
+      this.setState(this.state);
+
+      this.props.backgroundVolume(0.6);
+    }
 
     toggleSignup = () => {
 
@@ -101,13 +97,6 @@ class IntroScreen extends Component {
     toggleLogin = () => {
         this.setState({login: !this.state.login});
 
-    };
-
-    changeBackgroundVolume = () => {
-      if (this.state.changed == false){
-        this.props.backgroundVolume(0.5);
-        this.state.changed = true;
-      }
     };
 
 
@@ -145,24 +134,42 @@ class IntroScreen extends Component {
         </div>);
 
 
+        if (this.state.show) {
+            return (
+                <div className="scrollable-wrapper">
+                    <div className="IntroScreen">
+                        <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
+                        {!(this.state.login || this.state.signup) ?
+                            <div className={"wrapper"}>
+                            <button className={"large-button intro-page-btn"} id={"guest"} onClick ={this.continueAsGuest}>
+                            Learn More! </button>
 
-        return (
-            <div className="scrollable-wrapper">
-                <div className="IntroScreen" onMouseOver = {this.changeBackgroundVolume}>
-                    <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
-                    {!(this.state.login || this.state.signup) ?
-                        <div className={"wrapper"}>
-                        <button className={"large-button intro-page-btn"} id={"guest"} onClick ={this.continueAsGuest}>
-                        Learn More! </button>
+                            </div>: null
+                        }
+                        {this.state.login ? login: null }
+                        {this.state.signup ? signup: null}
 
-                        </div>: null
-                    }
-                    {this.state.login ? login: null }
-                    {this.state.signup ? signup: null}
-
+                    </div>
                 </div>
-            </div>
-        );
+            );
+      } else {
+          return (
+              <div className="scrollable-wrapper">
+                  <div className="IntroScreen">
+                      {!(this.state.login || this.state.signup) ?
+                          <div className={"wrapper"}>
+                          <button className={"start-button start-page-btn"} id={"guest"} onClick ={this.changeState}>
+                          </button>
+
+                          </div>: null
+                      }
+                      {this.state.login ? login: null }
+                      {this.state.signup ? signup: null}
+
+                  </div>
+              </div>
+          );
+      }
     }
 }
 

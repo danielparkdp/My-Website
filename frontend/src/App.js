@@ -236,8 +236,13 @@ class App extends Component {
 
     componentDidMount() {
         const { cookies } = this.props;
+        this.background.play()
+            .catch(error => {
+                this.background.play()
+
+            });
         this.setupWebSocket();
-        //this.changeBackgroundVolume(0.5); //default
+        this.changeBackgroundVolume(0.5); //default
 
 
 
@@ -291,7 +296,6 @@ class App extends Component {
 
                     <IntroScreen removeCookies={this.removeCookies}
                         setCookies={this.setCookies}
-                        backgroundVolume={this.changeBackgroundVolume}
                                  error={this.state.error}
                                  submit={this.hideIntro}/> :
                     <NavBar worldRef={this.world_ref}

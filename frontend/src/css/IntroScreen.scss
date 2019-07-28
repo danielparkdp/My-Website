@@ -41,7 +41,7 @@ button {
     margin: 125px auto 10px auto;
     display: inherit;
     vertical-align: middle;
-    animation: appear 4.5s;
+    animation: appear 3.8s;
 }
 
 .title h1 {
@@ -72,11 +72,29 @@ button {
     font-weight: bold;
     border-radius: 20px;
     padding: 5px;
+    animation: appear 3.8s;
 }
 
 .large-button:hover {
     cursor: pointer;
     background-color: $accent-hover;
+}
+
+.start-button {
+    margin: 10px auto;
+    background: url("../img/enter.gif") no-repeat scroll 0 0 transparent;
+    background-size: 100% 100%;
+    color: #001147;
+    width: 240px;
+    height: 70px;
+    font-size: 15px;
+    font-weight: lighter;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.start-button:hover {
+    cursor: pointer;
 }
 
 .guest {
@@ -173,6 +191,13 @@ input[type="submit"]:hover {
     border: solid $accent-hover 1px;
     color: $accent-hover;
 }
+
+.start-page-btn {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
 
 #signup {
     margin-bottom: 40px;
