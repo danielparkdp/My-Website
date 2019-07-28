@@ -86,14 +86,14 @@ class IntroScreen extends Component {
 
     changeState = () => {
 
-              this.background = new Audio(background);
-              this.background.addEventListener('ended', function() {
-                  this.currentTime = 0;
-                  this.play();
-              }, false);
-              this.background.play();
-      this.state.show = true;
-      this.setState(this.state);
+        this.background = new Audio(background);
+        this.background.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        this.background.play();
+        this.state.show = true;
+        this.setState(this.state);
 
 
     }
@@ -168,7 +168,7 @@ class IntroScreen extends Component {
                       {!(this.state.login || this.state.signup) ?
                           <div className={"wrapper"}>
                           <button className={"start-button start-page-btn"} id={"guest"} onClick ={this.changeState}>
-                          </button>
+                          Enter Site . . .</button>
 
                           </div>: null
                       }

@@ -99,14 +99,18 @@ button {
 
 .start-button {
     margin: 10px auto;
-    background: url("../img/enter.gif") no-repeat scroll 0 0 transparent;
+    //background: url("../img/enter.gif") no-repeat scroll 0 0 transparent;
+
+    border: solid #001147 7px;
+    background: transparent;
+
     background-size: 100% 100%;
     color: #001147;
     width: 240px;
     height: 70px;
     font-size: 15px;
-    font-weight: lighter;
-    border-radius: 20px;
+    font-weight: bold;
+    border-radius: 240px;
     padding: 5px;
 }
 

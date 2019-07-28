@@ -124,7 +124,7 @@ getScoreDisplay(sortedPlayers){
       <div className="intro-screen exit-screen"  onKeyDown={this.onKeyDown}>
 
         <h1 className="game-title" >{this.props.title} </h1>
-        <h2 className="data-struct">Data Structure: {this.props.dataStructure}</h2>
+        <h2 className="data-struct">{this.props.dataStructure}</h2>
         <Planet top={30 + this.props.topOffset} left={-70 + this.props.leftOffset} width={this.props.width ? this.props.width : 220} imgUrl={this.props.planetUrl} name={""}/>
 
         <h2 className="msg"><em>{this.getMsg(sortedPlayers)}</em></h2>
