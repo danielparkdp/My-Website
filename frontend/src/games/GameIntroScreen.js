@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.scss';
 import '../css/Game.scss';
 import '../css/GameIntroScreen.scss';
+import '../css/Tutorial.scss';
 import Planet from '../Planet';
 import DataStructureInfo from "../DataStructureInfo";
 

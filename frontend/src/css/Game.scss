@@ -129,8 +129,8 @@
   }
 }
 
-.grow { 
-    transition: all .2s ease-in-out; 
+.grow {
+    transition: all .2s ease-in-out;
 }
 
 .curr-node {
@@ -164,7 +164,7 @@
 }
 
 .instructionsPic {
-  width: 42%;
+  width: 87%;
   background-size: 100%;
   background-repeat: no-repeat;
   margin:8px;
@@ -247,7 +247,7 @@
 
 @keyframes flash-reward-red {
   0% {
-    
+
   }
   50% {
     color: red;
@@ -259,8 +259,3 @@
     transform: scale(1)
   }
 }
-
-
-
-
-

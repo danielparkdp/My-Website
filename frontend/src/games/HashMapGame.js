@@ -11,10 +11,8 @@ import Timer from './Timer';
 import GameOverScreen from './GameOverScreen';
 import { enterGame, onGameOver, sendAction, gameOnBlur, flashBoxGreen, flashBoxRed, backButton, flashScoreRed} from './GameFunctions';
 import StandingsDisplay from './StandingsDisplay';
-import instr_1 from '../img/hashmap/hashmap_instructions1.png';
-import instr_2 from '../img/hashmap/hashmap_instructions2.png';
-import instr_3 from '../img/hashmap/hashmap_instructions3.png';
-import instr_4 from '../img/hashmap/hashmap_instructions4.png';
+import instr_1 from '../img/me.png';
+import instr_2 from '../img/craft.png';
 import white_arr from '../img/white_right_arrow.png';
 
 /**
@@ -64,10 +62,9 @@ class HashMapGame extends Component {
 
         //instructions for intro screen
         this.instructionsText = "Find as many candies as you can by hashing numbers into groups!";
-        this.inputGraphics = [<img key="hmi-1" src={instr_1} className="instructionsPic"/>,
-                            <img key="hmi-2" src={instr_2} className="instructionsPic"/>,
-                            <img key="hmi-3" src={instr_3} className="instructionsPic"/>,
-                            <img key="hmi-4" src={instr_4} className ="instructionsPic"/>];
+        this.instructionsText2 = "Find as many candies as you can by hashing numbers into groups222!";
+        this.inputGraphics = [<img key="hmi-1" src={instr_1} className="instructionsPic"/>];
+        this.inputGraphics2 = [<img key="hmi-1" src={instr_2} className="instructionsPic"/>];
         this.playerStateMap = {};
        }
 
@@ -361,7 +358,12 @@ createBuckets() {
         replay={() => enterGame(this)} back={this.props.onLeave} dataStructure={this.DATA_STRUCTURE_NAME}
         planetUrl={candyPlanet} topOffset={this.PLANET_OFFSET_TOP} leftOffset={this.PLANET_OFFSET_LEFT} width={this.PLANET_WIDTH} score={this.state.score}
         multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
-        username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}/>
+        username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}
+        instructions={this.instructionsText2}
+                                  submit={() => enterGame(this)}
+                                  inputGraphics={this.inputGraphics2} planetUrl={candyPlanet}
+                                  back={this.props.onLeave}
+                                  showButtons={!this.state.multiplayer}/>
     }
     }
 

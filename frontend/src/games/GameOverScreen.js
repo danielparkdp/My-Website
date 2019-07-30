@@ -3,6 +3,7 @@ import '../css/App.scss';
 import '../css/Game.scss';
 import '../css/GameIntroScreen.scss';
 import '../css/GameOverScreen.scss';
+import '../css/Tutorial.scss';
 import Planet from '../Planet';
 
 /**
@@ -41,76 +42,6 @@ class GameOverScreen extends Component {
     this.playerRankMap = {};
 }
 
-/**
- * Returns the DOM to display the score, based on whether we are in multiplayer or single player mode
- * */
-getScoreDisplay(sortedPlayers){
-    //add scores to flex box if multiplayer
-    if(this.props.multiplayer && this.props.players){
-      //find ranks of the players
-       return <div className="score-wrapper"> <div className="multiplayer-score-div">
-        { sortedPlayers.map((username) =>
-                <div key={username+"score-go"} className="multiplayer-score-box">
-                    <div className="mult-rank"> #{this.playerRankMap[username]} </div>
-                    <div className="mult-username"> {username} </div>
-                    <div className="mult-score">{this.props.players[username]["score"]} pts</div>
-               </div>) }
-       </div> </div>
-    } else {
-      //single player display
-        return <div>
-          <div id="curr-score-display">
-        <h3 className="game-over-score"> SCORE: </h3>
-        <h3 className="game-over-num"> {this.props.score} </h3>
-        </div>
-        <div id="high-score-display">
-        <h3 className="game-over-score"> HIGHSCORE: </h3>
-        <h3 className="game-over-num"> {this.props.highScore} </h3>
-        </div>
-
-    </div>
-    }
-}
-
-  /**
-   * Returns the message to be displayed in the green banner.
-   */
-  getMsg(sortedPlayers){
-    //multiplayer should be something like "You got 1st place, username!"
-    if(this.props.multiplayer){
-      //CALCULATE RANK
-      let scores = new Set();
-      let currRank = 0;
-      sortedPlayers.forEach((player) => {
-        let score = this.props.players[player]["score"];
-        if(!scores.has(score)){
-          scores.add(score);
-          currRank++;
-        }
-        this.playerRankMap[player] = currRank;
-      })
-      //find proper English ending for rank
-      let myRank = this.playerRankMap[this.props.username];
-      let ending = "";
-      switch(myRank){
-        case 1:
-           ending = "st";
-           break;
-        case 2:
-           ending = "nd";
-           break;
-        case 3:
-           ending = "rd";
-           break;
-        default:
-           ending = "th";
-           break;
-      }
-      return "You got " + myRank + ending + " place, " + this.props.username + "!";
-    } else { //single player should be "Nice job, username!"
-      return "Nice job, " + this.props.username + "!";
-    }
-  }
 
   render() {
 
@@ -123,15 +54,13 @@ getScoreDisplay(sortedPlayers){
     return (
       <div className="intro-screen exit-screen"  onKeyDown={this.onKeyDown}>
 
-        <h1 className="game-title" >{this.props.title} </h1>
-        <h2 className="data-struct">{this.props.dataStructure}</h2>
-        <Planet top={30 + this.props.topOffset} left={-70 + this.props.leftOffset} width={this.props.width ? this.props.width : 220} imgUrl={this.props.planetUrl} name={""}/>
+            <h1 className="game-title" >{this.props.title} </h1>
+            <h2 className="data-struct" onClick={this.toggleInfo}> {this.props.dataStructure}</h2>
+            <Planet top={30 + this.props.topOffset} left={-70 + this.props.leftOffset} width={this.props.width} imgUrl={this.props.planetUrl} name={""}/>
+            <h3 className="instructions">{this.props.instructions} </h3>
 
-        <h2 className="msg"><em>{this.getMsg(sortedPlayers)}</em></h2>
-
-          {/* SCORE */}
-         {this.getScoreDisplay(sortedPlayers)}
-
+            {/* GAME SPECIFIC INSTRUCTIONS */}
+            <div className="instructionsDiv">{this.props.inputGraphics}</div>
 
          <button className={"large-button"} id="return-btn" onClick={this.props.back}> Back to Space </button>
       </div>
