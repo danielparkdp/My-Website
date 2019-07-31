@@ -96,34 +96,35 @@
     height: 100vh;
     width: 100vw;
     overflow: scroll;
-    background-image: linear-gradient(to bottom right, #F6FFFF 0%, $darker-space-color 60%);
+    //background: #70CDFF;
+    background-image: linear-gradient(to bottom, #70CDFF 0%, $darker-space-color 80%);
 }
-
-.stars-front {
-  top: 0;
-  left: 0;
-  position: absolute;
-  height: 4000px;
-  width: 4000px; //dim
-  background-image: url("../img/front_star_layer_small.png");
-  z-index: 0;
-  background-size: 50%;
-  background-repeat: repeat;
-  overflow:hidden;
-  opacity: .65;
-}
-
-
 
 .stars-back {
   top: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   height: 4000px;
   width: 4000px; //dim
-  background-image: url("../img/back_star_layer_small.png");
+  background-image: url("../img/front_star_layer_small.png");
   z-index: 0;
-  background-size: 50%;
-  background-repeat: repeat;
+  background-size: 27%;
   overflow:hidden;
+  opacity: .55;
+  background-repeat: repeat-x;
 }
+//
+//
+//
+// .stars-back {
+//   top: 0;
+//   left: 0;
+//   position: absolute;
+//   height: 4000px;
+//   width: 4000px; //dim
+//   background-image: url("../img/back_star_layer_small.png");
+//   z-index: 0;
+//   background-size: 50%;
+//   background-repeat: repeat;
+//   overflow:hidden;
+// }

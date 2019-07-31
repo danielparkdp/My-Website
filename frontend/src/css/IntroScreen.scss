@@ -8,6 +8,8 @@
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom right, $main-bg-color 10%, $darker-space-color 60%);
+    background-size: 50%;
+    background-repeat: repeat;
     color: #001147;
     z-index: 135;
     margin: 0;
@@ -112,6 +114,7 @@ button {
     font-weight: bold;
     border-radius: 240px;
     padding: 5px;
+    animation: appear 0.8s;
 }
 
 .start-button:hover {
@@ -214,8 +217,14 @@ input[type="submit"]:hover {
 }
 
 .start-page-btn {
-    margin-top: 200px;
+    margin-top: 230px;
     margin-bottom: 200px;
+}
+
+.start-page-btn:hover {
+    background: transparent;
+    border: solid $accent-hover 7px;
+    color: $accent-hover;
 }
 
 
@@ -233,6 +242,19 @@ input[type="submit"]:hover {
     margin-right: 25px;
     vertical-align: middle;
     margin-top: 10px;
+}
+
+.bgstars {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 4000px;
+    width: 4000px; //dim
+    background-image: url("../img/back_star_layer_small.png");
+    z-index: -1;
+    background-size: 50%;
+    background-repeat: repeat;
+    overflow:hidden;
 }
 
 

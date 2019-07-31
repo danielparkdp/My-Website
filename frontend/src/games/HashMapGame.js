@@ -32,6 +32,7 @@ class HashMapGame extends Component {
     PLANET_OFFSET_LEFT = -55;
     PLANET_WIDTH = 260;
     DATA_STRUCTURE_NAME = "Daniel Park";
+    DATA_STRUCTURE_NAME_SECOND = "Education";
 
     constructor(props) {
         super(props);
@@ -355,7 +356,7 @@ createBuckets() {
     } else {
         //IF GAME IS OVER
         content = <GameOverScreen title={this.state.name}
-        replay={() => enterGame(this)} back={this.props.onLeave} dataStructure={this.DATA_STRUCTURE_NAME}
+        replay={() => enterGame(this)} back={this.props.onLeave} dataStructure={this.DATA_STRUCTURE_NAME_SECOND}
         planetUrl={candyPlanet} topOffset={this.PLANET_OFFSET_TOP} leftOffset={this.PLANET_OFFSET_LEFT} width={this.PLANET_WIDTH} score={this.state.score}
         multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
         username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}

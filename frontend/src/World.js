@@ -39,12 +39,12 @@ const initialState = {
     deltaY: 0,
     deltaTheta: 0,
     frontStarsPos: {
-        x: 0,
+        x: -200,
         y: -300,
     },
 
     backStarsPos: {
-        x: 0,
+        x: -180,
         y: -300,
     },
     totalDelta: {
@@ -56,13 +56,13 @@ const initialState = {
         y: 0,
     },
     upArrowDown: false,
-    planets: [ <Planet top={50} left={50} id={"cookieplanet"} imgUrl={cookiePlanet} hover="Chocolate Chip Links" name={"cookie planet"}/>,
-        <Planet top={550} left={300} imgUrl={applePlanet} id={"appleplanet"} hover="Bin-apple Trees" name={"apple planet"}/>,
-        <Planet top={700} left={1450} imgUrl={hamPlanet} id={"hamburgerplanet"} hover={"Barbe-Queue Rush"} name={"hamburger planet"}/>,
-        <Planet top={250} left={950} width={240} imgUrl={candyPlanet} id={"candyplanet"} hover={"Candy Hash Saga"} name={"candy planet"}/>,
-        <Planet top={100} left={1950} width={220} imgUrl={arenaPlanet} id={"arenaplanet"} hover={"Arena [PvP]"} name={"arena planet"}/>,
-        <Planet top={-450} left={600} width={220} imgUrl={shopPlanet} id={"shopplanet"} hover={"Shop"} name={"shop planet"}/>,
-        <Planet top={-350} left={1400} width={220} imgUrl={orangePlanet} id={"orangeplanet"} hover={"Build A Tree"} name={"orange planet"}/>],
+    planets: [ <Planet top={50} left={50} id={"cookieplanet"} imgUrl={cookiePlanet} hover="Contact + Links" name={"cookie planet"}/>,
+        <Planet top={550} left={300} imgUrl={applePlanet} id={"appleplanet"} hover="Projects" name={"apple planet"}/>,
+        <Planet top={650} left={1350} imgUrl={hamPlanet} id={"hamburgerplanet"} hover={"Involvements + Leadership"} name={"hamburger planet"}/>,
+        <Planet top={180} left={980} width={240} imgUrl={candyPlanet} id={"candyplanet"} hover={"About me"} name={"candy planet"}/>,
+        <Planet top={-650} left={1950} width={220} imgUrl={arenaPlanet} id={"arenaplanet"} hover={""} name={"arena planet"}/>,
+        <Planet top={-650} left={600} width={220} imgUrl={shopPlanet} id={"shopplanet"} hover={""} name={"shop planet"}/>,
+        <Planet top={-650} left={1900} width={220} imgUrl={orangePlanet} id={"orangeplanet"} hover={""} name={"orange planet"}/>],
 
     planetIDs: ["cookieplanet", "appleplanet", "hamburgerplanet", "candyplanet", "arenaplanet","shopplanet","orangeplanet"],
 
@@ -88,10 +88,10 @@ class World extends Component {
 
     DEGREE_FACTOR = 2;
     ROCKET_ACCELERATION = .1;
-    LEFT_BOUND = -1100;
+    LEFT_BOUND = -950;
     RIGHT_BOUND = 1320;
     TOP_BOUND = -500;
-    BOTTOM_BOUND = 1100;
+    BOTTOM_BOUND = 700;
 
     constructor(props) {
         super(props);
@@ -102,9 +102,9 @@ class World extends Component {
 
         this.engine = new Audio(rocket_fly);
         this.gameToPlanetMap = {
-            "Choco Chip Links": "cookieplanet",
-            "Bin-apple Trees": "appleplanet",
-            "Candy Hash Saga": "candyplanet",
+            "Contact + Links": "cookieplanet",
+            "Projects": "appleplanet",
+            "About me": "candyplanet",
             "Arena": "arenaplanet",
             "Build A Tree":"orangeplanet"
         }
@@ -224,7 +224,7 @@ class World extends Component {
             },
 
             backStarsPos: {
-                x: 0,
+                x: 250,
                 y: -300,
             },
             totalDelta: {

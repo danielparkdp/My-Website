@@ -5,6 +5,7 @@ import '../css/GameIntroScreen.scss';
 import '../css/GameOverScreen.scss';
 import '../css/Tutorial.scss';
 import Planet from '../Planet';
+import DataStructureInfo from "../DataStructureInfo";
 
 /**
  * Intro screen for a game. Expects the following props:
@@ -35,13 +36,19 @@ class GameOverScreen extends Component {
         title: "",
         planetUrl: "",
         dataStructure: "",
-        topOffset: 0 //for planet img positioning
+        topOffset: 0, //for planet img positioning
+        infoToggled:false
     };
 
     this.myRank = undefined;
     this.playerRankMap = {};
 }
 
+toggleInfo=()=>{
+    this.setState((prevState) => ({
+      infoToggled:!prevState.infoToggled
+    }));
+}
 
   render() {
 
@@ -51,20 +58,24 @@ class GameOverScreen extends Component {
                   (this.props.players[user]["score"] > this.props.players[user2]["score"]) ? -1 : 1)
                    : undefined;
 
-    return (
-      <div className="intro-screen exit-screen"  onKeyDown={this.onKeyDown}>
+   if(this.state.infoToggled){
+     return <DataStructureInfo onClose = {this.toggleInfo} structure = {this.props.dataStructure}/>
+   } else{
+      return (
+        <div className="intro-screen exit-screen"  onKeyDown={this.onKeyDown}>
 
-            <h1 className="game-title" >{this.props.title} </h1>
-            <h2 className="data-struct" onClick={this.toggleInfo}> {this.props.dataStructure}</h2>
-            <Planet top={30 + this.props.topOffset} left={-70 + this.props.leftOffset} width={this.props.width} imgUrl={this.props.planetUrl} name={""}/>
-            <h3 className="instructions">{this.props.instructions} </h3>
+              <h1 className="game-title" >{this.props.title} </h1>
+              <h2 className="data-struct" onClick={this.toggleInfo}> {this.props.dataStructure}</h2>
+              <Planet top={30 + this.props.topOffset} left={-70 + this.props.leftOffset} width={this.props.width} imgUrl={this.props.planetUrl} name={""}/>
+              <h3 className="instructions">{this.props.instructions} </h3>
 
-            {/* GAME SPECIFIC INSTRUCTIONS */}
-            <div className="instructionsDiv">{this.props.inputGraphics}</div>
+              {/* GAME SPECIFIC INSTRUCTIONS */}
+              <div className="instructionsDiv">{this.props.inputGraphics}</div>
 
-         <button className={"large-button"} id="return-btn" onClick={this.props.back}> Back to Space </button>
-      </div>
-    );
+           <button className={"large-button"} id="return-btn" onClick={this.props.back}> Back to Space </button>
+        </div>
+      );
+    }
   }
 }
 

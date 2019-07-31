@@ -146,7 +146,7 @@ class IntroScreen extends Component {
         if (this.state.show) {
             return (
                 <div className="scrollable-wrapper">
-                    <div className="IntroScreen">
+                    <div className="IntroScreen"> <div className="bgstars"/>
                         <div className={"title"}> <div className="dv-logo"/>  <h1>Daniel Park</h1> </div>
                         {!(this.state.login || this.state.signup) ?
                             <div className={"wrapper"}>
@@ -164,7 +164,7 @@ class IntroScreen extends Component {
       } else {
           return (
               <div className="scrollable-wrapper">
-                  <div className="IntroScreen">
+                  <div className="IntroScreen"> <div className="bgstars"/>
                       {!(this.state.login || this.state.signup) ?
                           <div className={"wrapper"}>
                           <button className={"start-button start-page-btn"} id={"guest"} onClick ={this.changeState}>
