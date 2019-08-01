@@ -72,7 +72,7 @@ toggleInfo=()=>{
               {/* GAME SPECIFIC INSTRUCTIONS */}
               <div className="instructionsDiv">{this.props.inputGraphics}</div>
 
-           <button className={"large-button"} id="return-btn" onClick={this.props.back}> Back to Space </button>
+           <button className={"large-button"} id="return-btn" onClick={this.props.back}> Back to flying </button>
         </div>
       );
     }

@@ -55,14 +55,14 @@ class DataStructureInfo extends Component{
             </p>
            {/* <img className="descPicture" src={require("./img/data-structure-desc/queue-pic.png")} alt="Missing Resource"/> */}
             </div>
-        }else if(this.props.structure==="HashMap"){
+        }else if(this.props.structure==="Education"){
             content = <div class = "description">
-            <p>In Computer Science, a HashMap is a way of storing data. Every number you want to store is "hashed" and then assigned to a bucket. One way of "hashing"
-                is to find the remainder of your number with another prime number. You then put the number in a bucket based on the value of the remainder.
+            <p><a href = "https://stackoverflow.com/">Important link to learn more about my education</a>
             </p>
-            {/*<img className="descPicture" src={require("./img/data-structure-desc/hashmap-pic.png")} alt="Missing Resource"/>*/}
-            <p>HashMaps are known for being very efficient. To find a number, you have to "hash" it, and then look in the correct bucket based on the remainder. A computer can "hash" a number very quickly,
-                so HashMaps are a great data structure for finding information in computer science!
+            </div>
+        }else if(this.props.structure==="Daniel Park"){
+            content = <div class = "description">
+            <p><a href = "/">Not sure why you'd click this button but here is a link to my personal site</a>
             </p>
             </div>
         }
@@ -73,7 +73,7 @@ class DataStructureInfo extends Component{
             <h1> {this.props.structure} </h1>
             <button className={"x-button"} onClick={this.props.onClose}>X</button>
             {content}
-            <button className={"large-button"} id="play-btn" onClick={this.props.onClose}> Got it! </button>
+            <button className={"large-button"} id="play-btn" onClick={this.props.onClose}> Back </button>
         </div>);
     }
 

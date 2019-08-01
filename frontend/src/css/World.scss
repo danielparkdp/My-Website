@@ -97,7 +97,7 @@
     width: 100vw;
     overflow: scroll;
     //background: #70CDFF;
-    background-image: linear-gradient(to bottom, #70CDFF 0%, $darker-space-color 80%);
+    background-image: linear-gradient(to bottom, $darker-space-color 0%, $darker-space-color 80%);
 }
 
 .stars-back {
@@ -111,20 +111,20 @@
   background-size: 27%;
   overflow:hidden;
   opacity: .55;
-  background-repeat: repeat-x;
+  background-repeat: repeat;
 }
-//
-//
-//
-// .stars-back {
-//   top: 0;
-//   left: 0;
-//   position: absolute;
-//   height: 4000px;
-//   width: 4000px; //dim
-//   background-image: url("../img/back_star_layer_small.png");
-//   z-index: 0;
-//   background-size: 50%;
-//   background-repeat: repeat;
-//   overflow:hidden;
-// }
+
+
+
+.stars-front {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 4000px;
+  width: 4000px; //dim
+  background-image: url("../img/back_star_layer_small.png");
+  z-index: 0;
+  background-size: 50%;
+  background-repeat: repeat;
+  overflow:hidden;
+}

@@ -42,15 +42,15 @@
 }
 
 .data-struct {
-    color: gray;
-    font-size: 18px;
+    color: $dark-gray;
+    font-size: 22px;
     margin-top: 5px;
     margin-left: 50px;
     text-decoration: underline;
 }
 
 .data-struct:hover{
-    color: green;
+    color: grey;
     cursor: pointer;
 }
 
@@ -61,6 +61,8 @@
     font-size: 14px;
     margin-top:0px;
     margin-bottom:0px;
+    text-align: left;
+    white-space: pre-wrap;
 }
 
 #play-btn {

@@ -62,8 +62,13 @@ class HashMapGame extends Component {
         this.scoreRef = React.createRef();
 
         //instructions for intro screen
-        this.instructionsText = "Find as many candies as you can by hashing numbers into groups!";
-        this.instructionsText2 = "Find as many candies as you can by hashing numbers into groups222!";
+        this.instructionsText = "Hi! I'm Daniel, a junior at Brown University studying Computer Science and Applied Math. ";
+        this.instructionsText = this.instructionsText.concat("I'm passionate about engineering and entrepreneurship, so I love ");
+        this.instructionsText = this.instructionsText.concat("learning and using cutting-edge tech to build products that can add value to people's lives! ");
+        this.instructionsText = this.instructionsText.concat("\n\nAs such, I enjoy talking about cool ideas and new innovations in technology, so please don't hesitate to reach out if you'd like to chat.");
+        this.instructionsText = this.instructionsText.concat("\n\nOutside of my work & projects, I enjoy playing piano, making arrangements for songs, teaching coding/writing/piano to younger peers, and gaming!");
+        this.instructionsText2 = "I currently go to Brown University, and I'm working towards the CS-APMA degree track. I'll be graduating June 2021!";
+        this.instructionsText2 = this.instructionsText2.concat("\n\nFor high school I went to White Oaks Secondary School in Oakville, Canada. I took part in the IB & French Immersion programs.");
         this.inputGraphics = [<img key="hmi-1" src={instr_1} className="instructionsPic"/>];
         this.inputGraphics2 = [<img key="hmi-1" src={instr_2} className="instructionsPic"/>];
         this.playerStateMap = {};
