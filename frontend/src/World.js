@@ -328,6 +328,9 @@ class World extends Component {
             case 38: case 87:
                 this.setState({upArrowDown: true});
                 break;
+            case 27:
+                this.returnToSpace();
+                break;
             default:
                 break;
         }

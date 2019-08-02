@@ -42,6 +42,7 @@ toggleInfo=()=>{
     }));
 }
 
+
   render() {
 
     if(this.state.infoToggled){

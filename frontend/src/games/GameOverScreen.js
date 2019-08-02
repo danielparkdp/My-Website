@@ -62,7 +62,7 @@ toggleInfo=()=>{
      return <DataStructureInfo onClose = {this.toggleInfo} structure = {this.props.dataStructure}/>
    } else{
       return (
-        <div className="intro-screen exit-screen"  onKeyDown={this.onKeyDown}>
+        <div className="intro-screen"  onKeyDown={this.onKeyDown}>
 
               <h1 className="game-title" >{this.props.title} </h1>
               <h2 className="data-struct" onClick={this.toggleInfo}> {this.props.dataStructure}</h2>

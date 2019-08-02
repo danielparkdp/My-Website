@@ -172,6 +172,41 @@
   margin-bottom: 10px;
 }
 
+.resumePic {
+  width: 95%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin:8px;
+  margin-top:0px;
+  margin-bottom: 10px;
+}
+
+.resumePic:hover {
+  transform: scale(2);
+}
+
+.logoPic {
+  width: 8%;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  margin:8px;
+  margin-top:0px;
+  margin-bottom: 10px;
+}
+.logoPic:hover {
+  transform: scale(1.2);
+}
+
+
+.emptyPic {
+  width: 0.00001%;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  margin:8px;
+  margin-top:0px;
+  margin-bottom: 10px;
+}
+
 .flash-box-red {
   animation: flash-box-red .4s;
 }

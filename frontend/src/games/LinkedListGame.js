@@ -13,9 +13,12 @@ import leftKeyPic from '../img/linked-list/ll_left_arrow.png';
 import {socket, MESSAGE_TYPE} from "../App";
 import {INPUT, enterGame, handleInput, onGameOver, flashArrow, gameOnBlur, flashBoxRed , flashBoxGreen, backButton} from './GameFunctions';
 import StandingsDisplay from './StandingsDisplay';
-import ll_instr_1 from '../img/linked-list/ll_left_arrow.png';
-import ll_instr_2 from '../img/linked-list/ll_right_arrow.png';
-import ll_instr_3 from '../img/linked-list/ll_enter.png';
+import ll_instr_1 from '../img/githublogo.png';
+import ll_instr_2 from '../img/linkedinlogo.png';
+import ll_instr_3 from '../img/emaillogo.png';
+import ll_instr_4 from '../img/phonelogo.png';
+import empty from '../img/Empty.png';
+import resume from '../img/DanielPark_Resume.jpg';
 
 /**
  * LINKED LIST GAME:
@@ -34,7 +37,7 @@ class LinkedListGame extends Component {
     super(props);
 
     this.state = {
-        name: "Contact & Links to Pages",
+        name: "Contact & Links",
         targetVal: 1,
         currVal: 5,
         score: 0,
@@ -53,14 +56,25 @@ class LinkedListGame extends Component {
     this.timer = React.createRef();
     this.targetBoxRef = React.createRef();
 
-    this.instructionsText = "Search through a Linked List of cookies to find as many targets " +
-       "as you can in 30 seconds!";
+    this.instructionsText = "Here are my contact links. Don't hesitate to reach out whether you're a recruiter, friend, or peer!";
 
+
+    this.instructionsText2 = "";
     //list of instruction graphics to be passed in to intro screen
     this.inputGraphics = [
-      <img key={"ll-instr-1"} src={ll_instr_1} className="instructionsPic"/>,
-      <img key={"ll-instr-2"} src={ll_instr_2} className ="instructionsPic"/>,
-      <img key={"ll-instr-3"} src={ll_instr_3} className="instructionsPic"/>];
+      <p><a href = "https://github.com/danielparkdp" target="_blank"><img key={"ll-instr-1"} src={ll_instr_1} className="logoPic"/></a>
+      <a><img key={"empty"} src={empty} className="emptyPic"/></a>
+      <a href = "https://www.linkedin.com/in/danielparkdp" target="_blank"><img key={"ll-instr-2"} src={ll_instr_2} className="logoPic"/></a>
+      <a><img key={"empty"} src={empty} className="emptyPic"/></a>
+      <a href="mailto:danielpark779@gmail.com"><img key={"ll-instr-3"} src={ll_instr_3} className="logoPic"/></a>
+      <a><img key={"empty"} src={empty} className="emptyPic"/></a>
+      <a href="tel:123-456-7890"><img key={"ll-instr-4"} src={ll_instr_4} className="logoPic"/></a></p>
+    ];
+    this.inputGraphics2 = [
+      <img key={"resume"} src={resume} className="resumePic"/>];
+
+    this.DATA_STRUCTURE_NAME = "";
+    this.DATA_STRUCTURE_NAME_SECOND = "";
 }
 
 componentDidMount() {
@@ -241,7 +255,7 @@ changeCookie(num){
     let content;
     if(!this.state.entered){
       content = <GameIntroScreen title={this.state.name} instructions={this.instructionsText}
-                                submit={() => enterGame(this)} dataStructure="(Doubly) Linked List"
+                                submit={() => enterGame(this)} dataStructure={this.DATA_STRUCTURE_NAME}
                                 inputMap={this.inputMap} planetUrl={cookiePlanet} topOffset={-40}
                                 leftOffset={-20} inputGraphics={this.inputGraphics} back={this.props.onLeave}
                                 showButtons={!this.state.multiplayer} />
@@ -297,12 +311,22 @@ changeCookie(num){
 
           document.getElementById("main-game-div").focus();
         } else {
-          //IF GAME IS OVER
-          content = <GameOverScreen title={this.state.name}
-                  replay={() => enterGame(this)} back={this.props.onLeave} dataStructure="(Doubly) Linked List"
-                  planetUrl={cookiePlanet} topOffset={-40} leftOffset={-20} score={this.state.score}
-                  multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
-                  username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}/>
+            //IF GAME IS OVER
+            content = <GameOverScreen title={this.state.name}
+            replay={() => enterGame(this)} back={this.props.onLeave} dataStructure={this.DATA_STRUCTURE_NAME_SECOND}
+            topOffset={-40} leftOffset={-20} score={this.state.score}
+            multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
+            username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}
+            instructions={this.instructionsText2}
+                                      submit={() => enterGame(this)}
+                                      inputGraphics={this.inputGraphics2} planetUrl={cookiePlanet}
+                                      back={this.props.onLeave}
+                                      showButtons={!this.state.multiplayer}/>
+
+            // replay={() => enterGame(this)} back={this.props.onLeave} dataStructure="(Doubly) Linked List"
+            // planetUrl={cookiePlanet} topOffset={-40} leftOffset={-20} score={this.state.score}
+            // multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
+            // username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}/>
         }
 
     }
