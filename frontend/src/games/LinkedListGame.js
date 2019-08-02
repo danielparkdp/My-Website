@@ -20,13 +20,13 @@ import ll_instr_3 from '../img/linked-list/ll_enter.png';
 /**
  * LINKED LIST GAME:
  * The player searches though a linked list of cookies to find as many targets as they can in the given time limit.
- *  
+ *
  *  MULTIPLAYER COMPATABLE
- * 
+ *
  * Expects the following props:
  *          @prop username : username of current player
  *          @prop onLeave : function called when player exits game
- *          @prop backToArena: function called when 
+ *          @prop backToArena: function called when
  */
 class LinkedListGame extends Component {
 
@@ -34,7 +34,7 @@ class LinkedListGame extends Component {
     super(props);
 
     this.state = {
-        name: "Choco Chip Links",
+        name: "Contact & Links to Pages",
         targetVal: 1,
         currVal: 5,
         score: 0,
@@ -100,7 +100,7 @@ onKeyDown = (event) => {
   }
 }
 
-/**  
+/**
  * Gets starting info from game (players, initial target, start node)
  *   @param response : backend response
  */
@@ -127,8 +127,8 @@ onStartResp(response){
 
 /**
  * After user makes a move, start animations that indicate whether the move
- *  was valid, as well as update score if necessary 
- *  
+ *  was valid, as well as update score if necessary
+ *
  * @param response: response from backend
 */
 onActionResp(response){
@@ -152,7 +152,7 @@ onActionResp(response){
 
       //only update current player info if it was this player that moved
       if(this.props.username === payload.userWhoMoved){
-           this.updateForCurrentPlayer(currPlayerStats, prevScore < this.state.score); 
+           this.updateForCurrentPlayer(currPlayerStats, prevScore < this.state.score);
       } else {
         //update linked list preview because someone else moved
         let input = parsedPlayers[payload.userWhoMoved]["lastClicked"];
@@ -172,10 +172,10 @@ onActionResp(response){
 
   /**
    * updates the graphics when the current user makes a move (called from above method)
-   * 
+   *
    * @param currPlayer current player dictionary {"score", "lastClicked"}
    * @param validMoce bool for whether move is valid
-   * 
+   *
    * */
   updateForCurrentPlayer(currPlayer, validMove){
     let input = currPlayer["lastClicked"];
@@ -203,7 +203,7 @@ onActionResp(response){
       }
   }
 
-  /** 
+  /**
    * Fades cookie in with passed-in value
    * @param num value of new cookie
    *  */
@@ -242,7 +242,7 @@ changeCookie(num){
     if(!this.state.entered){
       content = <GameIntroScreen title={this.state.name} instructions={this.instructionsText}
                                 submit={() => enterGame(this)} dataStructure="(Doubly) Linked List"
-                                inputMap={this.inputMap} planetUrl={cookiePlanet} topOffset={-40} 
+                                inputMap={this.inputMap} planetUrl={cookiePlanet} topOffset={-40}
                                 leftOffset={-20} inputGraphics={this.inputGraphics} back={this.props.onLeave}
                                 showButtons={!this.state.multiplayer} />
     } else {
@@ -301,7 +301,7 @@ changeCookie(num){
           content = <GameOverScreen title={this.state.name}
                   replay={() => enterGame(this)} back={this.props.onLeave} dataStructure="(Doubly) Linked List"
                   planetUrl={cookiePlanet} topOffset={-40} leftOffset={-20} score={this.state.score}
-                  multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()} 
+                  multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
                   username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}/>
         }
 

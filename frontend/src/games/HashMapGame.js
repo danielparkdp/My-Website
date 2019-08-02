@@ -63,7 +63,7 @@ class HashMapGame extends Component {
 
         //instructions for intro screen
         this.instructionsText = "Hi! I'm Daniel, a junior at Brown University studying Computer Science and Applied Math. ";
-        this.instructionsText = this.instructionsText.concat("I'm passionate about engineering and entrepreneurship, so I love ");
+        this.instructionsText = this.instructionsText.concat("\n\nI'm passionate about engineering and entrepreneurship, so I love ");
         this.instructionsText = this.instructionsText.concat("learning and using cutting-edge tech to build products that can add value to people's lives! ");
         this.instructionsText = this.instructionsText.concat("\n\nAs such, I enjoy talking about cool ideas and new innovations in technology, so please don't hesitate to reach out if you'd like to chat.");
         this.instructionsText = this.instructionsText.concat("\n\nOutside of my work & projects, I enjoy playing piano, making arrangements for songs, teaching coding/writing/piano to younger peers, and gaming!");
