@@ -59,7 +59,7 @@ class LinkedListGame extends Component {
     this.instructionsText = "Here are my contact links. Don't hesitate to reach out whether you're a recruiter, friend, or peer!";
 
 
-    this.instructionsText2 = "";
+    this.instructionsText2 = "Hover to view resume (Scroll down within the white box!)";
     //list of instruction graphics to be passed in to intro screen
     this.inputGraphics = [
       <p><a href = "https://github.com/danielparkdp" target="_blank"><img key={"ll-instr-1"} src={ll_instr_1} className="logoPic"/></a>
@@ -70,8 +70,8 @@ class LinkedListGame extends Component {
       <a><img key={"empty"} src={empty} className="emptyPic"/></a>
       <a href="tel:123-456-7890"><img key={"ll-instr-4"} src={ll_instr_4} className="logoPic"/></a></p>
     ];
-    this.inputGraphics2 = [
-      <img key={"resume"} src={resume} className="resumePic"/>];
+    this.inputGraphics2 = [<p>
+      <img key={"resume"} src={resume} className="resumePic"/><a><img key={"empty"} src={empty} className="emptyPic"/></a></p>];
 
     this.DATA_STRUCTURE_NAME = "";
     this.DATA_STRUCTURE_NAME_SECOND = "";

@@ -13,8 +13,6 @@ import { enterGame, INPUT, handleInput, onGameOver, flashArrow , gameOnBlur, fla
 import StandingsDisplay from './StandingsDisplay';
 import bt_instr_1 from '../img/binary-tree/bt_left_input.png';
 import bt_instr_2 from '../img/binary-tree/bt_right_input.png';
-import bt_instr_3 from '../img/binary-tree/bt_up_input.png';
-import bt_instr_4 from '../img/binary-tree/bt_enter_input.png';
 
 /**
  * BINARY TREE GAME:
@@ -40,7 +38,7 @@ class BinaryTreeGame extends Component {
         currVal: -5,
         score: 0,
         time: 60,
-        name: "Bin-apple Trees",
+        name: "Projects",
         startTime: 30,
         entered: false,
         gameOver: false,
@@ -55,15 +53,20 @@ class BinaryTreeGame extends Component {
     this.timer = React.createRef();
     this.targetRef = React.createRef();
 
+    this.DATA_STRUCTURE_NAME = "Project1";
+    this.DATA_STRUCTURE_NAME_SECOND = "Project2";
+
     //INSTRUCTIONS
-    this.instructionsText = "Search through a tree of apples to find the target! " +
-       "Each apple has a left child (with a lesser value) and a right child (greater value).";
+    this.instructionsText = "Here are some projects I've worked on! You can check out what I built by clicking on the image or visiting my Github.";
+    this.instructionsText = this.instructionsText.concat("\n\nCourseCache: ");
+
+    this.instructionsText2 = "Project Second!";
 
     this.inputGraphics = [
-      <img key={"bt-instr-1"} src={bt_instr_1} className="instructionsPic"/>,
-      <img key={"bt-instr-2"} src={bt_instr_2} className="instructionsPic"/>,
-      <img key={"bt-instr-3"} src={bt_instr_3} className="instructionsPic"/>,
-      <img key={"bt-instr-4"} src={bt_instr_4} className="instructionsPic"/>];
+      <img key={"bt-instr-1"} src={bt_instr_1} className="instructionsPic"/>];
+
+    this.inputGraphics2  = [
+      <img key={"bt-instr-3"} src={bt_instr_2} className="instructionsPic"/>];
 
     this.btPrev = React.createRef();
 }
@@ -281,7 +284,7 @@ onKeyDown = (event) => {
     //IF GAME IS NOT YET ENTERED - SHOW INTRO SCREEN
     if(!this.state.entered){
       content = <GameIntroScreen title={this.state.name} instructions={this.instructionsText}
-                                submit={() => enterGame(this)} dataStructure="Binary Tree"
+                                submit={() => enterGame(this)} dataStructure={this.DATA_STRUCTURE_NAME}
                                 inputGraphics={this.inputGraphics} planetUrl={applePlanet} topOffset={-75} leftOffset={0} width={205}
                                 back={this.props.onLeave} showButtons={!this.state.multiplayer}/>
     } else {
@@ -337,10 +340,17 @@ onKeyDown = (event) => {
     } else {
         //IF GAME IS OVER
         content = <GameOverScreen title={this.state.name}
-        replay={() => enterGame(this)} back={this.props.onLeave} dataStructure="Binary Tree"
+        replay={() => enterGame(this)} back={this.props.onLeave}
         planetUrl={applePlanet} topOffset={-75} leftOffset={0} score={this.state.score}
         multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
-        username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}/>
+        username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}
+        dataStructure={this.DATA_STRUCTURE_NAME_SECOND}
+        width={205}score={this.state.score}
+        instructions={this.instructionsText2}
+        submit={() => enterGame(this)}
+        inputGraphics={this.inputGraphics2}
+        showButtons={!this.state.multiplayer}/>
+
     }
     }
 
