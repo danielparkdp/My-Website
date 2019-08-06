@@ -12,7 +12,7 @@ import GameOverScreen from './GameOverScreen';
 import { enterGame, onGameOver, sendAction, gameOnBlur, flashBoxGreen, flashBoxRed, backButton, flashScoreRed} from './GameFunctions';
 import StandingsDisplay from './StandingsDisplay';
 import instr_1 from '../img/piano.jpg';
-import instr_2 from '../img/craft.png';
+import instr_2 from '../img/outdoors.jpg';
 import white_arr from '../img/white_right_arrow.png';
 
 /**
@@ -66,8 +66,8 @@ class QueueGame extends Component {
         this.instructionsText = this.instructionsText.concat(" realized how much I valued everything I had learned.");
         this.instructionsText = this.instructionsText.concat("\n\nPiano has been a big part of my life; I've soloed at Carnegie Hall, competed nationally, and performed with orchestras. ");
         this.instructionsText = this.instructionsText.concat("Nowadays, I enjoy writing fun piano themes and making arrangements for songs from movies and musicals! (Currently writing an arrangement for 'One Last Time' from Hamilton).");
-        this.instructionsText2 = "I currently go to Brown University, and I'm working towards the CS-APMA degree track. I'll be graduating June 2021!";
-        this.instructionsText2 = this.instructionsText2.concat("\n\nFor high school I went to White Oaks Secondary School in Oakville, Canada. I took part in the IB & French Immersion programs.");
+        this.instructionsText2 = "At Brown I'm involved in club squash, chess club, and community service youth tutoring! I lead youth coding and SAT-prep workshops at underfunded public schools in Rhode Island.";
+        this.instructionsText2 = this.instructionsText2.concat("\n\nI also enjoy spending time working on various fun entrepreneurial projects and going on trips with the outing club.");
         this.inputGraphics = [<img key="hmi-1" src={instr_1} className="instructionsPic"/>];
         this.inputGraphics2 = [<img key="hmi-1" src={instr_2} className="instructionsPic"/>];
         this.playerStateMap = {};
