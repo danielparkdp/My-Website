@@ -256,8 +256,8 @@ changeCookie(num){
     if(!this.state.entered){
       content = <GameIntroScreen title={this.state.name} instructions={this.instructionsText}
                                 submit={() => enterGame(this)} dataStructure={this.DATA_STRUCTURE_NAME}
-                                inputMap={this.inputMap} planetUrl={cookiePlanet} topOffset={-40}
-                                leftOffset={-20} inputGraphics={this.inputGraphics} back={this.props.onLeave}
+                                inputMap={this.inputMap} planetUrl={cookiePlanet} topOffset={-85}
+                                leftOffset={-35} inputGraphics={this.inputGraphics} back={this.props.onLeave}
                                 showButtons={!this.state.multiplayer} />
     } else {
       //IF GAME IS BEING PLAYED
@@ -314,7 +314,7 @@ changeCookie(num){
             //IF GAME IS OVER
             content = <GameOverScreen title={this.state.name}
             replay={() => enterGame(this)} back={this.props.onLeave} dataStructure={this.DATA_STRUCTURE_NAME_SECOND}
-            topOffset={-40} leftOffset={-20} score={this.state.score}
+            topOffset={-85} leftOffset={-35} score={this.state.score}
             multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
             username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}
             instructions={this.instructionsText2}

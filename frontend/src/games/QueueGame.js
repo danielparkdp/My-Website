@@ -28,8 +28,8 @@ import white_arr from '../img/white_right_arrow.png';
  */
 class QueueGame extends Component {
 
-    PLANET_OFFSET_TOP = -25;
-    PLANET_OFFSET_LEFT = -50;
+    PLANET_OFFSET_TOP = -75;
+    PLANET_OFFSET_LEFT = -40;
     DATA_STRUCTURE_NAME = "Interests";
     DATA_STRUCTURE_NAME_SECOND = "Activities/Leadership";
 

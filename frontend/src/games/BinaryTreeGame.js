@@ -11,8 +11,8 @@ import Timer from './Timer';
 import GameOverScreen from './GameOverScreen';
 import { enterGame, INPUT, handleInput, onGameOver, flashArrow , gameOnBlur, flashBoxGreen, flashBoxRed, backButton } from './GameFunctions';
 import StandingsDisplay from './StandingsDisplay';
-import bt_instr_1 from '../img/binary-tree/bt_left_input.png';
-import bt_instr_2 from '../img/binary-tree/bt_right_input.png';
+import bt_instr_1 from '../img/coursecache.png';
+import bt_instr_2 from '../img/scoti.png';
 
 /**
  * BINARY TREE GAME:
@@ -53,14 +53,21 @@ class BinaryTreeGame extends Component {
     this.timer = React.createRef();
     this.targetRef = React.createRef();
 
-    this.DATA_STRUCTURE_NAME = "Project1";
-    this.DATA_STRUCTURE_NAME_SECOND = "Project2";
+    this.DATA_STRUCTURE_NAME = "Project Links";
+    this.DATA_STRUCTURE_NAME_SECOND = "Project Links";
 
     //INSTRUCTIONS
-    this.instructionsText = "Here are some projects I've worked on! You can check out what I built by clicking on the image or visiting my Github.";
-    this.instructionsText = this.instructionsText.concat("\n\nCourseCache: ");
+    this.instructionsText = "Here are some projects I've worked on and developed! Check out my GitHub or resume for more info/statistics (green balloon)";
+    this.instructionsText = this.instructionsText.concat("\n\nMusical Memo: Built a social music sharing app for hobbyist songwriters using Swift/Xcode & Firebase. Allows people to record and share song memos and listen to a library of the songs of other users.");
+    this.instructionsText = this.instructionsText.concat("\n\nInto the Dataverse: Developed a website to teach kids data structures in a fun, immersive way using Java, SQL, and React.js. Includes multiple minigames in an open world & online multiplayer with account database functionality. (This site was based on Dataverse's concept!)");
+    this.instructionsText = this.instructionsText.concat("\n\nCourseCache: Built a site addressing a major issue with most course sites: difficulty in searching and querying for new courses beyond requirements. Developed with Node.js and HTML/CSS with MongoDB database.");
 
-    this.instructionsText2 = "Project Second!";
+    this.instructionsText2 = "These are projects I've worked on beyond what's on my resume! ";
+    this.instructionsText2 = this.instructionsText2.concat("\n\nAmi.io: Developed a sentiment analysis chatbot in Python for the Google Home to provide accessible and private advice for people suffering from problems with mental health. ");
+    this.instructionsText2 = this.instructionsText2.concat("Demoed at Hack@Brown for Social Impact Award (Jan 2019).");
+    this.instructionsText2 = this.instructionsText2.concat("\n\nScoti: Built a social e-transfer app prototype using React.js to gamify money transfers between friends/family. ");
+    this.instructionsText2 = this.instructionsText2.concat("Won 2nd place at Scotiabank Canadian University Hackathon (Aug 2018).");
+
 
     this.inputGraphics = [
       <img key={"bt-instr-1"} src={bt_instr_1} className="instructionsPic"/>];
@@ -285,7 +292,7 @@ onKeyDown = (event) => {
     if(!this.state.entered){
       content = <GameIntroScreen title={this.state.name} instructions={this.instructionsText}
                                 submit={() => enterGame(this)} dataStructure={this.DATA_STRUCTURE_NAME}
-                                inputGraphics={this.inputGraphics} planetUrl={applePlanet} topOffset={-75} leftOffset={0} width={205}
+                                inputGraphics={this.inputGraphics} planetUrl={applePlanet} topOffset={-105} leftOffset={-10} width={205}
                                 back={this.props.onLeave} showButtons={!this.state.multiplayer}/>
     } else {
         //IF GAME IS BEING PLAYED
@@ -341,7 +348,7 @@ onKeyDown = (event) => {
         //IF GAME IS OVER
         content = <GameOverScreen title={this.state.name}
         replay={() => enterGame(this)} back={this.props.onLeave}
-        planetUrl={applePlanet} topOffset={-75} leftOffset={0} score={this.state.score}
+        planetUrl={applePlanet} topOffset={-105} leftOffset={-10} score={this.state.score}
         multiplayer={this.state.players.length > 1} backToArena={() => this.props.backToArena()}
         username={this.props.username} players={this.state.playerStateMap} highScore={this.state.highScore}
         dataStructure={this.DATA_STRUCTURE_NAME_SECOND}

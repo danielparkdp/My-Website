@@ -28,8 +28,8 @@ import white_arr from '../img/white_right_arrow.png';
  */
 class HashMapGame extends Component {
 
-    PLANET_OFFSET_TOP = -35;
-    PLANET_OFFSET_LEFT = -55;
+    PLANET_OFFSET_TOP = -85;
+    PLANET_OFFSET_LEFT = -60;
     PLANET_WIDTH = 260;
     DATA_STRUCTURE_NAME = "Daniel Park";
     DATA_STRUCTURE_NAME_SECOND = "Education";
