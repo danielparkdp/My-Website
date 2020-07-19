@@ -12,6 +12,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Map;
 
 import edu.brown.cs.login.Login;
 import edu.brown.cs.repl.REPL;
@@ -32,6 +33,10 @@ import edu.brown.cs.repl.REPL;
 import edu.brown.cs.websocket.WebSocket;
 import freemarker.template.Configuration;
 import spark.utils.IOUtils;
+import com.google.common.collect.ImmutableMap;
+import spark.TemplateViewRoute;
+import spark.template.freemarker.FreeMarkerEngine;
+import spark.QueryParamsMap;
 
 import static spark.Spark.*;
 /**
@@ -99,7 +104,53 @@ public final class Main {
     Spark.externalStaticFileLocation("src/main/resources");
     Spark.exception(Exception.class, new ExceptionPrinter());
     get("/", (request, response) -> new ModelAndView(new HashMap<>(), "index.html"),
-            new HTMLTemplateEngine());  }
+            new HTMLTemplateEngine());
+
+    FreeMarkerEngine freeMarker = createEngine();
+    Spark.get("/robinhood", new FrontHandler(), freeMarker);
+    Spark.get("/rpg", new RPGHandler(), freeMarker);
+    Spark.get("/music", new MusicHandler(), freeMarker);
+
+    }
+
+    /**
+   * Handle requests to the front page of our Robinhood website.
+   *
+   */
+  private static class FrontHandler implements TemplateViewRoute {
+    @Override
+    public ModelAndView handle(Request req, Response res) {
+      Map<String, Object> variables = ImmutableMap.of("title",
+          "Robinhood Portfolio Tool");
+      return new ModelAndView(variables, "query.ftl");
+    }
+  }
+
+    /**
+   * Handle requests to the front page of our Music Genre website.
+   *
+   */
+  private static class MusicHandler implements TemplateViewRoute {
+    @Override
+    public ModelAndView handle(Request req, Response res) {
+      Map<String, Object> variables = ImmutableMap.of("title",
+          "Music Genre Classification Using Deep Learning");
+      return new ModelAndView(variables, "music.ftl");
+    }
+  }
+
+  /**
+  * Handle requests to the front page of our RPG website.
+  *
+  */
+  private static class RPGHandler implements TemplateViewRoute {
+  @Override
+  public ModelAndView handle(Request req, Response res) {
+    Map<String, Object> variables = ImmutableMap.of("title",
+        "Wedge! – Adventure RPG Demo");
+    return new ModelAndView(variables, "rpg.ftl");
+  }
+  }
 
   public class HTMLTemplateEngine extends TemplateEngine {
 

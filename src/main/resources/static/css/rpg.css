@@ -1,0 +1,52 @@
+input[type="number"] {
+  width: 3em;
+}
+body {
+	background-image: url("backgrounds/tiles.png");
+
+  background-color: #E7FBFF;
+  background-repeat: repeat;
+  background-position:center center;
+  background-attachment: fixed;
+
+
+}
+h1 {
+	font-family: Helvetica;
+	color: #000000;
+	font-weight: 200;
+	text-align: center;
+  text-decoration: underline;
+}
+h2 {
+	font-family: Helvetica;
+	color: #000000;
+	font-weight: 140;
+	text-align: center;
+}
+p {
+	font-family: Helvetica;
+	font-weight: 100;
+	color: #000000;
+	text-align: center;
+  float:center;
+
+}
+.music {
+  font-family: Helvetica;
+	color: #000000;
+	text-align: center;
+  float:center;
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
+
+.center {
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+  padding-left: 300px;
+  padding-top: 300px;
+
+}
