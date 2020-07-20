@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="static/css/normalize.css">
     <link rel="stylesheet" href="static/css/html5bp.css">
     <link rel="stylesheet" href="static/css/main.css">
-    <link rel="shortcut icon" type= "image/png" href = "favicon.ico">
+    <link rel="shortcut icon" type= "image/png" href = "spark/template/freemarker/img/music.png">
   </head>
   <body>
      ${content}
