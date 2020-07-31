@@ -14,7 +14,7 @@
   <body>
 
 
-    <img src="spark/template/freemarker/img/mc.png" class="center" >
+    <img src="spark/template/freemarker/img/msg1.png" class="center" >
 
 
 
