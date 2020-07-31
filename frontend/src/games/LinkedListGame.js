@@ -18,7 +18,7 @@ import ll_instr_2 from '../img/linkedinlogo.png';
 import ll_instr_3 from '../img/emaillogo.png';
 import ll_instr_4 from '../img/phonelogo.png';
 import empty from '../img/Empty.png';
-import resume from '../img/DanielPark_Resume.jpg';
+import resume from '../img/Daniel_Park_Resume.jpg';
 
 /**
  * LINKED LIST GAME:

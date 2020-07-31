@@ -15,8 +15,8 @@
 
 
   <div class="center">
-    <img src="spark/template/freemarker/img/msg1.png" class="mc" >
     <img src="spark/template/freemarker/img/msg2.png" class="mc2" >
+    <img src="spark/template/freemarker/img/msg1.png" class="mc" >
   </div>
 
 

@@ -59,6 +59,20 @@ p {
   position: absolute;
   z-index: 3;
   opacity:100%;
+  top: 100%;
+  transform: translateY(-50%);
+  animation: transform 10s infinite;
+}
+@keyframes transform {
+  45% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .mc2 {
@@ -66,12 +80,20 @@ p {
   position: absolute;
   z-index: 1;
   opacity:0%;
+  top: 100%;
+  transform: translateY(-50%);
+  animation: mooov 10s infinite;
+
 }
 
-.mc:hover{
-  opacity:0%;
-}
-
-.mc2:hover{
-  opacity: 100%;
+@keyframes mooov {
+  10% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
