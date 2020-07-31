@@ -58,15 +58,16 @@ class BinaryTreeGame extends Component {
 
     //INSTRUCTIONS
     this.instructionsText = "Here are some projects I've worked on and developed! Check out my GitHub or resume for more info/statistics (green balloon)";
-    this.instructionsText = this.instructionsText.concat("\n\nMusical Memo: Built a social music sharing app for hobbyist songwriters using Swift/Xcode & Firebase. Allows people to record and share song memos and listen to a library of the songs of other users.");
+    this.instructionsText = this.instructionsText.concat("\n\nRobinfolio: Built an online tool for Robinhood users to strategize and visualize options/stocks trading approaches. Used Java and JavaScript to implement analysis algorithm and Black-Scholes model for options pricing.");
     this.instructionsText = this.instructionsText.concat("\n\nInto the Dataverse: Developed a website to teach kids data structures in a fun, immersive way using Java, SQL, and React.js. Includes multiple minigames in an open world & online multiplayer with account database functionality. (This site was based on Dataverse's concept!)");
     this.instructionsText = this.instructionsText.concat("\n\nCourseCache: Built a site addressing a major issue with most course sites: difficulty in searching and querying for new courses beyond requirements. Developed with Node.js and HTML/CSS with MongoDB database.");
 
     this.instructionsText2 = "These are projects I've worked on beyond what's on my resume! ";
+    this.instructionsText2 = this.instructionsText2.concat("\n\nMusical Memo: Built a social music sharing app for hobbyist songwriters using Swift/Xcode & Firebase. Allows people to record and share song memos and listen to a library of the songs of other users.");
     this.instructionsText2 = this.instructionsText2.concat("\n\nAmi.io: Developed a sentiment analysis chatbot in Python for the Google Home to provide accessible and private advice for people suffering from problems with mental health. ");
-    this.instructionsText2 = this.instructionsText2.concat("Demoed at Hack@Brown for Social Impact Award (Jan 2019).");
+    this.instructionsText2 = this.instructionsText2.concat("Demoed at Hack@Brown for Social Impact Award.");
     this.instructionsText2 = this.instructionsText2.concat("\n\nScoti: Built a social e-transfer app prototype using React.js to gamify money transfers between friends/family. ");
-    this.instructionsText2 = this.instructionsText2.concat("Won 2nd place at Scotiabank Canadian University Hackathon (Aug 2018).");
+    this.instructionsText2 = this.instructionsText2.concat("Won 2nd place at Scotiabank Canadian University Hackathon.");
 
 
     this.inputGraphics = [

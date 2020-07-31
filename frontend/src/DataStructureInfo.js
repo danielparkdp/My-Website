@@ -25,7 +25,7 @@ class DataStructureInfo extends Component{
           <div></div>
           <a href = "http://www.dataverse.fun/" target="_blank" >Dataverse</a>
           <div></div>
-          <a href = "http://www.musicalmemo.com/" target="_blank" >Musical Memo</a>
+          <a href = "http://www.robinfolio.com/" target="_blank" >Robinfolio</a>
           </p>
           </div>
         }else if(this.props.structure==="Education"){

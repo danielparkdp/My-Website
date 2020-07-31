@@ -61,12 +61,12 @@ class QueueGame extends Component {
         this.scoreRef = React.createRef();
 
         //instructions for intro screen
-        this.instructionsText = "Piano! I grew up playing the piano and, like many kids, didn't particularly enjoy practicing and learning to play.";
+        this.instructionsText = "I grew up playing the piano and, like many kids, didn't particularly enjoy practicing and learning to play.";
         this.instructionsText = this.instructionsText.concat(" But I stuck with it because I enjoyed the progress and the competition, and over time, I");
         this.instructionsText = this.instructionsText.concat(" realized how much I valued everything I had learned.");
         this.instructionsText = this.instructionsText.concat("\n\nPiano has been a big part of my life; I've soloed at Carnegie Hall, competed nationally, and performed with orchestras. ");
-        this.instructionsText = this.instructionsText.concat("Nowadays, I enjoy writing fun piano themes and making arrangements for songs from movies and musicals! (Currently writing an arrangement for 'One Last Time' from Hamilton).");
-        this.instructionsText2 = "At Brown I'm involved in club squash, chess club, and community service youth tutoring! I lead youth coding and SAT-prep workshops at underfunded public schools in Rhode Island.";
+        this.instructionsText = this.instructionsText.concat("Nowadays, I enjoy writing fun piano themes and making arrangements for songs from movies and musicals! (Currently writing an arrangement for 'Dear Theodosia' from Hamilton).");
+        this.instructionsText2 = "At Brown I'm involved in club squash, poker, chess club, and community service youth tutoring! I lead youth coding and college prep workshops at underfunded public schools in Rhode Island.";
         this.instructionsText2 = this.instructionsText2.concat("\n\nI also enjoy spending time working on various fun entrepreneurial projects and going on trips with the outing club.");
         this.inputGraphics = [<img key="hmi-1" src={instr_1} className="instructionsPic"/>];
         this.inputGraphics2 = [<img key="hmi-1" src={instr_2} className="instructionsPic"/>];
