@@ -8,6 +8,7 @@ body {
   background-repeat: repeat;
   background-position:left top;
   background-attachment: fixed;
+  background-size:13%;
 
 }
 h1 {
@@ -45,7 +46,32 @@ p {
   /* display: block;
   margin-left: auto;
   margin-right: auto; */
-  padding-left: 150px;
-  padding-top: 75px;
+  text-align:center;
+  margin-right:30%;
+  margin-bottom:10%;
 
+  position: relative;
+
+}
+
+.mc {
+  width:50%;
+  position: absolute;
+  z-index: 3;
+  opacity:100%;
+}
+
+.mc2 {
+  width:50%;
+  position: absolute;
+  z-index: 1;
+  opacity:0%;
+}
+
+.mc:hover{
+  opacity:0%;
+}
+
+.mc2:hover{
+  opacity: 100%;
 }
